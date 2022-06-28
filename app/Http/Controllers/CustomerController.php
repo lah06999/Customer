@@ -14,7 +14,7 @@ class CustomerController extends Controller
 
   public function store(Request $request)
   {
-    dd($request->email);
+
     $customer = new Customer;
     $customer->email = $request->email;
     $customer->password = $request->password;
@@ -23,5 +23,14 @@ class CustomerController extends Controller
     $customer->state = $request->state;
     $customer->zip = $request->zip;
     $customer->save();
+
+    return redirect('/register/view');
+  }
+
+  public function view()
+  {
+    $customers = customer::all();
+    $data = compact('customers');
+    return view('customer-view')->with($data);
   }
 }

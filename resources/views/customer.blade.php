@@ -12,6 +12,7 @@
   <body>
       
     <form action="{{url('/')}}/register" method="post">
+        @csrf
         <div class="container">
         <div class="form-row">
           <div class="form-group col-md-6">

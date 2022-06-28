@@ -13,5 +13,7 @@ use App\http\controllers\CustomerController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route:: get('/register',[CustomerController::class ,'index']);
-Route::post('/register',[CustomerController::class,'store']);
+
+Route::get('/register', [CustomerController::class, 'index']);
+Route::post('/register', [CustomerController::class, 'store']);
+Route::get('/register/view', [CustomerController::class, 'view']);
